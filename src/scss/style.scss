@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;900&family=Gowun+Dodum&family=Karla:wght@200&family=Tajawal:wght@200;300;500&family=Work+Sans:wght@100&display=swap');
+
+$tablet: 1179px;
+$mobile: 539px;
+
+//common
+@import 'common/reset';
+@import 'common/header';
+@import 'common/footer';
+@import 'common/layout';
+
+//main
+@import 'main/visual';
+@import 'main/news';
+@import 'main/section_coffee';
+@import 'main/section_dessert';
+@import 'main/section_shop';
+
+//sub
+@import 'sub/members';
