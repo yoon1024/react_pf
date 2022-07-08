@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
 	const active = { color: 'lightblue' };
@@ -10,7 +10,7 @@ function Header(props) {
 			<div className='inner'>
 				<h1>
 					<NavLink exact to='/'>
-						<img src='../../public/img/logo.png' alt='로고' />
+						<img src='' alt='로고' />
 					</NavLink>
 				</h1>
 
@@ -46,7 +46,7 @@ function Header(props) {
 						</NavLink>
 					</li>
 				</ul>
-				<FontAwesomeIcon icon={faBars} />
+				<FontAwesomeIcon icon={faMagnifyingGlass} />
 			</div>
 		</header>
 	);

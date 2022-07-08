@@ -1,0 +1,17 @@
+footer {
+	width: 100%;
+	background-color: #f0f0f0;
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		ul {
+			float: left;
+			margin-right: 20px;
+		}
+	}
+}
