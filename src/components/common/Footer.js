@@ -12,13 +12,17 @@ function Footer() {
 					<li>고객센터: 1599-2681 / STORE@HANDUM.CO.KR</li>
 				</ul>
 				<ul>
-					<li>POLICY</li>
+					<li>
+						<strong>POLICY</strong>
+					</li>
 					<li>이용약관</li>
 					<li>개인정보처리방침</li>
 					<li>사업자정보 확인</li>
 				</ul>
 				<ul>
-					<li>CONTACT</li>
+					<li>
+						<strong>CONTACT</strong>
+					</li>
 					<li>문의하기</li>
 					<li>인스타그램</li>
 				</ul>

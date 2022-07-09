@@ -14,8 +14,10 @@ import Section_shop from './components/main/Section_shop';
 
 //sub
 import Members from './components/sub/Members';
+import Youtube from './components/sub/Youtube';
 
 import './scss/style.scss';
+
 function App() {
 	return (
 		<>
@@ -23,6 +25,10 @@ function App() {
 				<Route exact path='/'>
 					<Header type={'main'} />
 					<Visual />
+					<News />
+					<Section_coffee />
+					<Section_dessert />
+					<Section_shop />
 				</Route>
 
 				<Route path='/'>
@@ -30,6 +36,7 @@ function App() {
 				</Route>
 			</Switch>
 			<Route path='/members' component={Members} />
+			<Route path='/youtube' component={Youtube} />
 
 			<Footer />
 		</>

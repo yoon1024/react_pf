@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
-	const active = { color: 'lightblue' };
+	const active = { color: '#2779a4' };
 	return (
 		<header className={props.type}>
 			<div className='inner'>

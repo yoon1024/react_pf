@@ -1,9 +1,9 @@
 header {
 	width: 100%;
-	background: #efefef;
 	.inner {
-		width: 100%;
+		width: 1180px;
 		height: 80px;
+		margin: 0 auto;
 		position: relative;
 		h1 {
 			position: absolute;
@@ -13,8 +13,7 @@ header {
 		#gnb {
 			position: absolute;
 			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
+			right: 200px;
 			li {
 				float: left;
 				a {
@@ -33,7 +32,49 @@ header {
 			position: absolute;
 			bottom: 20px;
 			right: 100px;
-			// display: none;
+		}
+	}
+	&.sub {
+		background: #222;
+		.inner {
+			h1 a {
+				color: #fff;
+			}
+			#gnb li a {
+				color: #fff;
+			}
+			.fa-magnifying-glass {
+				color: #fff;
+			}
+		}
+	}
+	&.main {
+		background: #fff;
+		border-bottom: 1px solid #ccc;
+		z-index: 2;
+		.inner {
+			h1 a {
+				color: #555;
+			}
+			#gnb li a {
+				color: #555;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		width: 100%;
+		.inner {
+			width: 100%;
+			h1 {
+				bottom: 20px;
+				left: 40px;
+			}
+			#gnb {
+				display: none;
+			}
 		}
 	}
 }
