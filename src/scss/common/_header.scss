@@ -5,10 +5,10 @@ header {
 		height: 80px;
 		margin: 0 auto;
 		position: relative;
-		h1 {
+		.pic {
 			position: absolute;
-			bottom: 20px;
-			left: 0px;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 		#gnb {
 			position: absolute;

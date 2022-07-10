@@ -1,12 +1,7 @@
-import React from 'react';
+import Layout from '../common/Layout';
 
 function Youtube() {
-	return (
-		<section className='content youtube'>
-			<figure></figure>
-			<div className='inner'></div>
-		</section>
-	);
+	return <Layout name={'Youtube'}>layout content comes here.</Layout>;
 }
 
 export default Youtube;

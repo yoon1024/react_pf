@@ -1,0 +1,94 @@
+.Members {
+	width: 100%;
+	.inner {
+		width: 1180px;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.box1 {
+			float: left;
+			width: 40%;
+			height: 472px;
+			background-color: #222;
+			padding-top: 40px;
+			padding-left: 60px;
+			margin-left: 5%;
+			.fa-plus {
+				color: #fff;
+				font-size: 70px;
+				cursor: pointer;
+				&:hover {
+					color: #2779a4;
+				}
+			}
+			p {
+				font-size: 25px;
+				font-family: 'roboto';
+				color: #fff;
+				margin-top: 20px;
+			}
+		}
+		article {
+			float: left;
+			width: 25%;
+			.pic {
+				width: 100%;
+				height: 300px;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+			&:nth-of-type(1) {
+				margin-top: 172px;
+			}
+			&:nth-of-type(2) {
+				margin-top: 172px;
+			}
+			&:nth-of-type(3) {
+				margin-left: 45%;
+			}
+			&:nth-of-type(5) {
+				margin-left: 20%;
+			}
+			&:nth-of-type(6) {
+				margin-right: 30%;
+			}
+			&:nth-of-type(7) {
+				margin-left: 45%;
+			}
+		}
+		.box2 {
+			float: left;
+			width: 40%;
+			height: 472px;
+			background-color: #222;
+			padding: 40px 60px;
+			margin-left: 5%;
+			position: relative;
+			h2 {
+				font-size: 40px;
+				font-family: 'roboto';
+				letter-spacing: 2.5px;
+				color: #fff;
+			}
+			p {
+				font-family: 'roboto';
+				font-weight: 100;
+				line-height: 1.6;
+				color: #fff;
+				margin-top: 30px;
+			}
+			a {
+				font-size: 50px;
+				color: #fff;
+				position: absolute;
+				bottom: 20px;
+				right: 40px;
+			}
+		}
+	}
+}

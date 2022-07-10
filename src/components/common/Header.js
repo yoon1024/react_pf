@@ -5,14 +5,15 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function Header(props) {
 	const active = { color: '#2779a4' };
+	const path = process.env.PUBLIC_URL;
 	return (
 		<header className={props.type}>
 			<div className='inner'>
-				<h1>
+				<div className='pic'>
 					<NavLink exact to='/'>
-						<img src='' alt='로고' />
+						<img src={`${path}/img/logo.png`} alt='로고' />
 					</NavLink>
-				</h1>
+				</div>
 
 				<ul id='gnb'>
 					<li>
@@ -42,7 +43,7 @@ function Header(props) {
 					</li>
 					<li>
 						<NavLink to='/members' activeStyle={active}>
-							MemberShip
+							Members
 						</NavLink>
 					</li>
 				</ul>
