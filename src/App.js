@@ -26,8 +26,8 @@ function App() {
 					<Header type={'main'} />
 					<Visual />
 					<News />
-					<Section_coffee />
 					<Section_dessert />
+					<Section_coffee />
 					<Section_shop />
 				</Route>
 
