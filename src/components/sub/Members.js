@@ -2,7 +2,16 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import {
+	faPlus,
+	faArrowRightLong,
+	faArrowDown,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+	faFacebookF,
+	faTwitter,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 function Member() {
@@ -18,6 +27,10 @@ function Member() {
 	return (
 		<Layout name={'Members'}>
 			<div className='box1'>
+				<p>view more</p>
+				<FontAwesomeIcon icon={faArrowDown} />
+			</div>
+			<div className='box2'>
 				<FontAwesomeIcon icon={faPlus} />
 				<p>Partnership</p>
 			</div>
@@ -25,12 +38,33 @@ function Member() {
 				return (
 					<article key={idx}>
 						<div className='pic'>
+							<div className='txt'>
+								<h3>{member.name}</h3>
+								<p>{member.position}</p>
+							</div>
+							<ul className='sns'>
+								<li>
+									<NavLink to='#'>
+										<FontAwesomeIcon icon={faFacebookF} />
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to='#'>
+										<FontAwesomeIcon icon={faTwitter} />
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to='#'>
+										<FontAwesomeIcon icon={faInstagram} />
+									</NavLink>
+								</li>
+							</ul>
 							<img src={`${path}/img/${member.pic}`} alt={member.name} />
 						</div>
 					</article>
 				);
 			})}
-			<div className='box2'>
+			<div className='box3'>
 				<h2>let's talk.</h2>
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam illum

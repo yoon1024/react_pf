@@ -1,42 +1,42 @@
 {
   "members": [
     {
-      "name": "S.COUPS",
-      "position": "Barista",
+      "name": "Stella",
+      "position": "Cashier",
       "pic": "member1.jpg"
     },
     {
-      "name": "Wonwoo",
+      "name": "Noah",
       "position": "Barista",
       "pic": "member2.jpg"
     },
     {
-      "name": "Jeonghan",
+      "name": "Henry",
       "position": "Barista",
       "pic": "member3.jpg"
     },
     {
-      "name": "Joshua",
+      "name": "Oliver",
       "position": "Barista",
       "pic": "member4.jpg"
     },
     {
-      "name": "Hoshi",
+      "name": "Sevastian",
       "position": "Barista",
       "pic": "member5.jpg"
     },
     {
-      "name": "Vernon",
+      "name": "Luca",
       "position": "Barista",
       "pic": "member6.jpg"
     },
     {
-      "name": "Woozi",
+      "name": "Leo",
       "position": "Barista",
       "pic": "member7.jpg"
     },
     {
-      "name": "Dino",
+      "name": "Ava",
       "position": "Barista",
       "pic": "member8.jpg"
     }
