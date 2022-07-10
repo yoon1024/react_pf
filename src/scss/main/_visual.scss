@@ -56,3 +56,11 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	#visual {
+		.inner {
+			width: 100%;
+		}
+	}
+}
