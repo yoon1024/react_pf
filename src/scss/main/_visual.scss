@@ -17,6 +17,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		text-align: center;
 		.title {
 			margin: 0 auto;
 			width: 50vw;
@@ -25,7 +26,33 @@
 			border-top: 1px solid #fff;
 			border-bottom: 1px solid #fff;
 			color: #fff;
-			padding: 50px 0px;
+			padding: 30px 0px;
+			h2 {
+				font-size: 40px;
+				font-weight: 400;
+				line-height: 40px;
+			}
+			h1 {
+				font-size: 100px;
+				font-weight: 900;
+				line-height: 100px;
+			}
+		}
+		h3 {
+			font-size: 25px;
+			color: #fff;
+			font-weight: 300;
+			font-family: 'Gowun Dodum';
+			line-height: 80px;
+		}
+		p {
+			width: 450px;
+			margin: 0 auto;
+			font-size: 15px;
+			color: #fff;
+			font-weight: 200;
+			line-height: 30px;
+			font-family: 'Gowun Dodum';
 		}
 	}
 }

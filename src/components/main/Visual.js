@@ -10,11 +10,10 @@ function Visual() {
 					<h2>I'VE BEEN FEELING</h2>
 					<h1>UNDER PRESSURE</h1>
 				</div>
-				<h3>Lorem ipsum dolor sit amet consectetur.</h3>
+				<h3>일상 속의 특별한 휴식, 언더프레셔</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
-					obcaecati eaque possimus deleniti esse quidem vero laborum aliquid
-					assumenda accusantium!
+					자체 개발한 여과식 추출 방식과 철저하고 체계적인 위생관리 시스템을
+					통해 보다 선명하고 깨끗한 콜드브루 커피를 선보입니다
 				</p>
 			</div>
 		</figure>
