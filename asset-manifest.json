@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react_pf/static/css/main.b901748a.css",
+    "main.js": "/react_pf/static/js/main.038e1d1f.js",
+    "static/media/coffee_visual.jpg": "/react_pf/static/media/coffee_visual.76edd5c22e4e73adb653.jpg",
+    "static/media/shop_visual.jpg": "/react_pf/static/media/shop_visual.1b20d1e5d4c7e2d6f4b2.jpg",
+    "static/media/dessert_visual.jpg": "/react_pf/static/media/dessert_visual.2d0237eb8ca48514c8e6.jpg",
+    "index.html": "/react_pf/index.html",
+    "main.b901748a.css.map": "/react_pf/static/css/main.b901748a.css.map",
+    "main.038e1d1f.js.map": "/react_pf/static/js/main.038e1d1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b901748a.css",
+    "static/js/main.038e1d1f.js"
+  ]
+}
