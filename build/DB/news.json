@@ -1,0 +1,24 @@
+{
+  "news": [
+    {
+      "title": "커피 본연의 맛을 찾아",
+      "sub": "In search of natural born Sweetness",
+      "pic": "news1.png"
+    },
+    {
+      "title": "조화로운 열의 전달",
+      "sub": "Harmonious heat Delivery",
+      "pic": "news2.png"
+    },
+    {
+      "title": "블렌드? 상상만 했던 그 맛!",
+      "sub": "Blend : Mix & Match",
+      "pic": "news3.png"
+    },
+    {
+      "title": "로스팅 : 달콤함의 발현",
+      "sub": "More than just a Rating",
+      "pic": "news4.png"
+    }
+  ]
+}

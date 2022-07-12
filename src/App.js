@@ -15,6 +15,7 @@ import Section_shop from './components/main/Section_shop';
 //sub
 import Members from './components/sub/Members';
 import Youtube from './components/sub/Youtube';
+import Location from './components/sub/Location';
 
 import './scss/style.scss';
 
@@ -37,6 +38,7 @@ function App() {
 			</Switch>
 			<Route path='/members' component={Members} />
 			<Route path='/youtube' component={Youtube} />
+			<Route path='/location' component={Location} />
 
 			<Footer />
 		</>
