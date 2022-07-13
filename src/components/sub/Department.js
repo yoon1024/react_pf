@@ -2,11 +2,7 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faPlus,
-	faArrowRightLong,
-	faArrowDown,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import {
 	faFacebookF,
 	faTwitter,
@@ -26,10 +22,6 @@ function Member() {
 
 	return (
 		<Layout name={'Members'}>
-			<div className='box1'>
-				<p>view more</p>
-				<FontAwesomeIcon icon={faArrowDown} />
-			</div>
 			<div className='box2'>
 				<FontAwesomeIcon icon={faPlus} />
 				<p>Partnership</p>

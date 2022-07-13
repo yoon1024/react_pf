@@ -1,36 +1,44 @@
 .Location {
-	.box1 {
-		width: 40%;
-		height: 50px;
+	.route {
+		width: 100%;
+		height: 200px;
 		background-color: #333;
-		margin-bottom: 170px;
-		margin-left: 5%;
-		position: relative;
-		p {
-			font-size: 20px;
-			font-family: 'roboto';
-			font-weight: 100;
-			letter-spacing: 3px;
-			color: #fff;
-			position: absolute;
-			top: 50%;
-			left: 50px;
-			transform: translateY(-50%);
-		}
-		.fa-arrow-down {
-			position: absolute;
-			top: 50%;
-			right: 50px;
-			transform: translateY(-50%);
-			color: #fff;
-			font-size: 30px;
+		display: flex;
+		justify-content: space-around;
+		color: #efefef;
+		padding-top: 30px;
+		text-align: center;
+		border-radius: 30px;
+		li {
+			width: 33.333%;
+			border-right: 1px solid #fff;
+			height: 80%;
+			&:last-of-type {
+				border: none;
+			}
+			.fa-bus,
+			.fa-train-subway,
+			.fa-car {
+				font-size: 70px;
+				margin-bottom: 20px;
+			}
+			.txt {
+				h2 {
+					font-size: 30px;
+					font-family: 'roboto';
+					margin-bottom: 10px;
+				}
+				p {
+					font-family: 'roboto';
+				}
+			}
 		}
 	}
 	#map {
 		width: 100%;
 		height: 500px;
 		background-color: #000;
-		margin-top: 150px;
+		margin-top: 100px;
 		border: 1px solid #000;
 	}
 	button {
@@ -46,6 +54,7 @@
 		li {
 			width: 100%;
 			height: 300px;
+			padding-right: 10px;
 			margin-bottom: 50px;
 			border: 1px solid #000;
 			cursor: pointer;
@@ -62,6 +71,7 @@
 				width: 100%;
 				height: 100%;
 				position: relative;
+
 				img {
 					width: 35%;
 					height: 100%;
@@ -80,9 +90,6 @@
 						color: #293d69;
 						margin-bottom: 30px;
 					}
-					// p {
-					// 	margin-bottom: 10px;
-					// }
 				}
 			}
 			&:nth-of-type(2) {
@@ -104,6 +111,33 @@
 						color: #293d69;
 						margin-bottom: 30px;
 					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	.Location {
+		.branch {
+			width: 100%;
+			margin-top: 50px;
+			li {
+				.wrap {
+					img {
+						width: 40%;
+					}
+					.txt {
+						left: 45%;
+						h2 {
+							color: #293d69;
+							margin-bottom: 30px;
+						}
+					}
+				}
+				&:nth-of-type(2),
+				&:nth-of-type(3) {
+					width: 100%;
+					margin-right: 0;
 				}
 			}
 		}

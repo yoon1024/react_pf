@@ -20,6 +20,33 @@
 		opacity: 0;
 		transform: translateY(100px);
 		transition: opacity 0.5s, transform 0.5s;
+		.box1 {
+			width: 40%;
+			height: 50px;
+			background-color: #333;
+			margin-bottom: 170px;
+			margin-left: 5%;
+			position: relative;
+			p {
+				font-size: 20px;
+				font-family: 'roboto';
+				font-weight: 100;
+				letter-spacing: 3px;
+				color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50px;
+				transform: translateY(-50%);
+			}
+			.fa-arrow-down {
+				position: absolute;
+				top: 50%;
+				right: 50px;
+				transform: translateY(-50%);
+				color: #fff;
+				font-size: 30px;
+			}
+		}
 	}
 	&.on {
 		figure {
@@ -39,6 +66,14 @@
 		}
 		.inner {
 			width: 100%;
+			.box1 {
+				p {
+					left: 20px;
+				}
+				.fa-arrow-down {
+					right: 20px;
+				}
+			}
 		}
 	}
 }

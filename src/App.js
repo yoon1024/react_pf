@@ -13,7 +13,7 @@ import Section_dessert from './components/main/Section_dessert';
 import Section_shop from './components/main/Section_shop';
 
 //sub
-import Members from './components/sub/Members';
+import Department from './components/sub/Department';
 import Youtube from './components/sub/Youtube';
 import Location from './components/sub/Location';
 import Community from './components/sub/Community';
@@ -37,7 +37,7 @@ function App() {
 					<Header type={'sub'} />
 				</Route>
 			</Switch>
-			<Route path='/members' component={Members} />
+			<Route path='/department' component={Department} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/location' component={Location} />
 			<Route path='/community' component={Community} />

@@ -1,7 +1,7 @@
 import Layout from '../common/Layout';
 import { useRef, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faTrainSubway, faCar } from '@fortawesome/free-solid-svg-icons';
 
 function Location() {
 	const { kakao } = window;
@@ -36,7 +36,7 @@ function Location() {
 			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
 			imgSize: new kakao.maps.Size(80, 80),
 			imgPos: { offset: new kakao.maps.Point(40, 80) },
-			img: `${process.env.PUBLIC_URL}/img/sojeonseolim.png`,
+			img: `${process.env.PUBLIC_URL}/img/sojeonseolim.jpg`,
 			address: '서울 강남구 영동대로 138길 23 지하1층',
 			tel: '02-542-0804',
 			time: 'TUE-THU 11:00~21:00 / SUN 11:00~18:00 / MON(정기휴무)',
@@ -99,10 +99,37 @@ function Location() {
 
 	return (
 		<Layout name={'Location'}>
-			<div className='box1'>
-				<p>Location</p>
-				<FontAwesomeIcon icon={faArrowDown} />
-			</div>
+			<ul className='route'>
+				<li>
+					<FontAwesomeIcon icon={faBus} />
+					<div className='txt'>
+						<h2>BUS</h2>
+						<p>Lorem ipsum dolor sit amet.</p>
+						{/* <p>(마을)강남01</p>
+						<p>(마을)강남06</p> */}
+					</div>
+				</li>
+				<li>
+					<FontAwesomeIcon icon={faTrainSubway} />
+					<div className='txt'>
+						<h2>SUBWAY</h2>
+						<p>Lorem ipsum dolor sit amet.</p>
+						{/* <p>(9)봉은사 7번출구 도보 1분</p>
+						<p>(2)삼성 6번출구 도보 4분</p>
+						<p>(9)삼성중앙 4번출구 도보 8분</p>
+						<p>(7)청담 2번출구 도보 13분</p> */}
+					</div>
+				</li>
+				<li>
+					<FontAwesomeIcon icon={faCar} />
+					<div className='txt'>
+						<h2>CAR</h2>
+						<p>Lorem ipsum dolor sit amet.</p>
+						{/* <p>(마을)강남01</p> */}
+					</div>
+				</li>
+			</ul>
+
 			<div id='map' ref={container}></div>
 			<div className='btnSet'>
 				<button onClick={() => setTraffic(!Traffic)}>
