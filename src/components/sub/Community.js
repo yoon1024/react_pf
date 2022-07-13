@@ -16,12 +16,15 @@ function Community() {
 	const textareaEdit = useRef(null);
 
 	const [Posts, setPosts] = useState(dummyPosts);
+	const [Allowed, setAllowed] = useState(true);
 
 	const resetForm = () => {
 		input.current.value = '';
 		textarea.current.value = '';
-		inputEdit.current.value = '';
-		textareaEdit.current.value = '';
+		if (inputEdit.current) {
+			inputEdit.current.value = '';
+			textareaEdit.current.value = '';
+		}
 	};
 
 	const createPost = () => {
@@ -43,6 +46,9 @@ function Community() {
 	};
 
 	const enableUpdate = (index) => {
+		if (!Allowed) return;
+
+		setAllowed(false);
 		setPosts(
 			Posts.map((post, idx) => {
 				if (idx === index) post.enableUpdate = true;
@@ -51,7 +57,16 @@ function Community() {
 		);
 	};
 
-	//실제 글 수정함수
+	const disableUpdate = (index) => {
+		setAllowed(true);
+		setPosts(
+			Posts.map((post, idx) => {
+				if (idx === index) post.enableUpdate = false;
+				return post;
+			})
+		);
+	};
+
 	const updatePost = (index) => {
 		if (!inputEdit.current.value.trim() || !textareaEdit.current.value.trim()) {
 			resetForm();
@@ -70,6 +85,12 @@ function Community() {
 		);
 	};
 
+	//수정모드가 열렸을 때 다른 수정 버튼을 누르더라도 수정이 되지 않도록 해야 하는데
+	//이렇게 하려며 allowed라는 어떤 state를 하나 만들어서
+	//그 값이 true일 때만 이 edit를 눌렀을 때 열리도록
+	//어떤 state값을 추가로 하나 만들어서
+	//내가 만약 edit을 눌러서 현재 수정 모드로 바뀌어 있으면
+	//그 state 값을 false, true 이렇게 지정을 해서 그 값이 true일 때만 edit 이벤트가 발생하도록 만들어 보자
 	useEffect(() => {
 		console.log(Posts);
 	}, [Posts]);
@@ -111,7 +132,7 @@ function Community() {
 										<br />
 									</div>
 									<div className='btnSet'>
-										<button>CANCEL</button>
+										<button onClick={() => disableUpdate(idx)}>CANCEL</button>
 										<button onClick={() => updatePost(idx)}>UPDATE</button>
 									</div>
 								</>
