@@ -19,7 +19,7 @@ function Location() {
 			park: '주차가능',
 		},
 		{
-			title: '삼성동 코엑스',
+			title: '둘러볼 곳 : 삼성동 코엑스',
 			latlng: new kakao.maps.LatLng(37.5126964707762, 127.06070547684942),
 			imgUrl: `${process.env.PUBLIC_URL}/img/balloons.png`,
 			imgSize: new kakao.maps.Size(80, 80),
@@ -31,7 +31,7 @@ function Location() {
 			park: '주차가능',
 		},
 		{
-			title: '소전서림(유료 도서관)',
+			title: '둘러볼 곳 : 소전서림',
 			latlng: new kakao.maps.LatLng(37.52364138030701, 127.05620912952872),
 			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
 			imgSize: new kakao.maps.Size(80, 80),

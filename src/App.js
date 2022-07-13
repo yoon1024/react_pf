@@ -40,7 +40,7 @@ function App() {
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/location' component={Location} />
 
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

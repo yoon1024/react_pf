@@ -35,8 +35,28 @@
 		article {
 			float: left;
 			width: 380px;
+			padding: 20px;
 			margin-right: 20px;
 			font-family: 'Gowun Dodum';
+			// border: 1px solid #999;
+			.pic {
+				position: relative;
+				cursor: pointer;
+				filter: saturate(0);
+				transition: 0.5s;
+				.fa-play {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-size: 80px;
+					color: #fff;
+					opacity: 0.7;
+				}
+				&:hover {
+					filter: saturate(1.2);
+				}
+			}
 			&:nth-of-type(3n) {
 				margin-right: 0px;
 			}

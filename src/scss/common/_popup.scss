@@ -1,0 +1,33 @@
+.Pop {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.9);
+	padding: 5vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+
+	.con {
+		width: 100%;
+		height: 100%;
+		border: 1px solid#555;
+		iframe {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.close {
+		font-size: 40px;
+		line-height: 1;
+		font-family: 'arial';
+		font-weight: bold;
+		color: #2779a4;
+		position: absolute;
+		top: 30px;
+		right: 5vw;
+		cursor: pointer;
+	}
+}

@@ -2,11 +2,13 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faPlay } from '@fortawesome/free-solid-svg-icons';
 import Popup from '../common/Popup';
 
 function Youtube() {
 	const [Vids, setVids] = useState([]);
+	const [Open, setOpen] = useState(false);
+	const [Index, setIndex] = useState(0);
 
 	useEffect(() => {
 		const key = 'AIzaSyB07SmnE1cJMVJRKCZmg_kaotLyw9z0IiE';
@@ -31,12 +33,18 @@ function Youtube() {
 					const tit = vid.snippet.title;
 					const desc = vid.snippet.description;
 					const date = vid.snippet.publishedAt;
-					const thumbnails = `${process.env.PUBLIC_URL}/img/youtube_thumbnails`;
+					const sub = `${process.env.PUBLIC_URL}/img/youtube_thumbnails`;
 					const num = vid.snippet.position;
 					return (
 						<article key={idx}>
-							<div className='pic'>
-								<img src={`${thumbnails}${num}.jpg`} alt={vid.snippet.title} />
+							<div
+								className='pic'
+								onClick={() => {
+									setOpen(true);
+									setIndex(idx);
+								}}>
+								<img src={`${sub}${num}.jpg`} alt={vid.snippet.title} />
+								<FontAwesomeIcon icon={faPlay} />
 							</div>
 							<h3>{tit.length > 30 ? tit.substr(0, 30) + '...' : tit}</h3>
 							<div className='txt'>
@@ -48,7 +56,12 @@ function Youtube() {
 				})}
 			</Layout>
 
-			<Popup></Popup>
+			{Open && (
+				<Popup setOpen={setOpen}>
+					<iframe
+						src={`https://www.youtube.com/embed/${Vids[Index].snippet.resourceId.videoId}`}></iframe>
+				</Popup>
+			)}
 		</>
 	);
 }
