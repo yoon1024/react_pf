@@ -31,8 +31,10 @@
 		height: 500px;
 		background-color: #000;
 		margin-top: 150px;
+		border: 1px solid #000;
 	}
 	button {
+		margin-top: 10px;
 		cursor: pointer;
 		height: 30px;
 		border: 1px solid #888;
@@ -40,7 +42,7 @@
 	}
 	.branch {
 		width: 100%;
-		margin-top: 100px;
+		margin-top: 50px;
 		li {
 			width: 100%;
 			height: 300px;
@@ -52,16 +54,16 @@
 				background: #999;
 			}
 			&.on {
-				background: #333;
-				border: 1px solid #333;
-				color: #fff;
+				background: #999;
+				border: none;
+				color: #efefef;
 			}
 			.wrap {
 				width: 100%;
 				height: 100%;
 				position: relative;
 				img {
-					width: 400px;
+					width: 35%;
 					height: 100%;
 					object-fit: cover;
 					float: left;
@@ -73,7 +75,31 @@
 					font-family: 'Gowun Dodum';
 					position: absolute;
 					top: 10%;
-					left: 430px;
+					left: 40%;
+					h2 {
+						color: #293d69;
+						margin-bottom: 30px;
+					}
+					// p {
+					// 	margin-bottom: 10px;
+					// }
+				}
+			}
+			&:nth-of-type(2) {
+				margin-right: 2%;
+			}
+			&:nth-of-type(2),
+			&:nth-of-type(3) {
+				float: left;
+				width: 49%;
+				img {
+					width: 40%;
+				}
+				.txt {
+					font-family: 'Gowun Dodum';
+					position: absolute;
+					top: 10%;
+					left: 45%;
 					h2 {
 						color: #293d69;
 						margin-bottom: 30px;

@@ -122,10 +122,10 @@ function Location() {
 
 				<ul className='branch' ref={btns}>
 					{info.map((info, idx) => {
-						// let on = '';
-						// Index === idx ? (on = 'on') : (on = '');
+						let on = '';
+						Index === idx ? (on = 'on') : (on = '');
 						return (
-							<li key={idx} onClick={() => setIndex(idx)}>
+							<li key={idx} onClick={() => setIndex(idx)} className={on}>
 								<div className='wrap'>
 									<img src={info.img} alt='' />
 									<div className='txt'>
