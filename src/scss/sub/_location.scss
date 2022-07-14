@@ -2,7 +2,7 @@
 	.route {
 		width: 100%;
 		height: 200px;
-		background-color: #333;
+		background-color: #293d69;
 		display: flex;
 		justify-content: space-around;
 		color: #efefef;
@@ -29,6 +29,7 @@
 					margin-bottom: 10px;
 				}
 				p {
+					font-size: 18px;
 					font-family: 'roboto';
 				}
 			}
@@ -118,9 +119,42 @@
 }
 @media screen and (max-width: $tablet) {
 	.Location {
-		.branch {
-			width: 100%;
+		.route {
+			width: 90%;
+			height: 150px;
+			padding-top: 10px;
+			margin: 0 auto;
+			li {
+				.fa-bus,
+				.fa-train-subway,
+				.fa-car {
+					font-size: 50px;
+					margin-bottom: 20px;
+				}
+				.txt {
+					h2 {
+						font-size: 25px;
+					}
+					p {
+						font-family: 'roboto';
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		#map {
+			width: 90%;
+			margin: 0 auto;
+			height: 400px;
 			margin-top: 50px;
+		}
+		button {
+			margin-left: 5%;
+			margin-bottom: 20px;
+		}
+		.branch {
+			width: 90%;
+			margin: 0 auto;
 			li {
 				.wrap {
 					img {

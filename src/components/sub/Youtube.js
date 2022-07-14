@@ -25,6 +25,31 @@ function Youtube() {
 	return (
 		<>
 			<Layout name={'Youtube'}>
+				<div className='box'>
+					<ul>
+						<li className='black'>
+							<h2>
+								BY OFFETTING IN THIS MANNER WE REDUCE EMISSION OF OTHER
+								GREENHOUSE GASSES SIMULTANEOUSLY
+							</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+								atque dignissimos quo expedita. Ipsum quam nemo possimus
+								molestiae temporibus beatae voluptas tempora doloribus molestias
+								atque perferendis, et animi eveniet expedita?
+							</p>
+						</li>
+						<li className='white'>
+							<h2>ARCHITECTURE, LANDSCAPE AND INTERIOR</h2>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+								doloribus vel eaque incidunt qui ab, repellat consectetur rem
+								expedita repellendus aliquid ipsam eligendi architecto. Dolor
+								eius odit alias quas. Mollitia?
+							</p>
+						</li>
+					</ul>
+				</div>
 				{Vids.map((vid, idx) => {
 					const tit = vid.snippet.title;
 					const desc = vid.snippet.description;
