@@ -124,7 +124,7 @@ function Location() {
 			</ul> */}
 
 			<div className='txt'>
-				<p>Location</p>
+				<h2>Location</h2>
 				<span>
 					Perfect location in a quiet place prvides a sense of clubbing and
 					privacy to the owners of the New Rome's apartments
@@ -132,29 +132,13 @@ function Location() {
 			</div>
 
 			<ul className='branch' ref={btns}>
-				<p>Featured news</p>
 				{info.map((info, idx) => {
 					let on = '';
 					Index === idx ? (on = 'on') : (on = '');
 					return (
 						<li key={idx} onClick={() => setIndex(idx)} className={on}>
 							<div className='wrap'>
-								<img src={info.img} alt='' />
-								<div className='txt'>
-									<h2>{info.title}</h2>
-									<p>
-										<strong>ADDRESS</strong>:{info.address}
-									</p>
-									<p>
-										<strong>TEL</strong>:{info.tel}
-									</p>
-									<p>
-										<strong>TIME</strong>: {info.time}
-									</p>
-									<p>
-										<strong>PARKING</strong>:{info.park}
-									</p>
-								</div>
+								<p>{info.title}</p>
 							</div>
 						</li>
 					);
@@ -178,7 +162,7 @@ function Location() {
 					<li onClick={() => setIndex(2)}>소전서림</li>
 				</ul> */}
 
-				{/* <ul className='branch' ref={btns}>
+				<ul className='route' ref={btns}>
 					<p>Featured news</p>
 					{info.map((info, idx) => {
 						let on = '';
@@ -206,7 +190,7 @@ function Location() {
 							</li>
 						);
 					})}
-				</ul> */}
+				</ul>
 			</div>
 		</Layout>
 	);
