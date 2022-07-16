@@ -99,14 +99,12 @@ function Location() {
 
 	return (
 		<Layout name={'Location'}>
-			<ul className='route'>
+			{/* <ul className='route'>
 				<li>
 					<FontAwesomeIcon icon={faBus} />
 					<div className='txt'>
 						<h2>BUS</h2>
 						<p>Lorem ipsum dolor sit amet.</p>
-						{/* <p>(마을)강남01</p>
-						<p>(마을)강남06</p> */}
 					</div>
 				</li>
 				<li>
@@ -114,10 +112,6 @@ function Location() {
 					<div className='txt'>
 						<h2>SUBWAY</h2>
 						<p>Lorem ipsum dolor sit amet.</p>
-						{/* <p>(9)봉은사 7번출구 도보 1분</p>
-						<p>(2)삼성 6번출구 도보 4분</p>
-						<p>(9)삼성중앙 4번출구 도보 8분</p>
-						<p>(7)청담 2번출구 도보 13분</p> */}
 					</div>
 				</li>
 				<li>
@@ -125,9 +119,46 @@ function Location() {
 					<div className='txt'>
 						<h2>CAR</h2>
 						<p>Lorem ipsum dolor sit amet.</p>
-						{/* <p>(마을)강남01</p> */}
 					</div>
 				</li>
+			</ul> */}
+
+			<div className='txt'>
+				<p>Location</p>
+				<span>
+					Perfect location in a quiet place prvides a sense of clubbing and
+					privacy to the owners of the New Rome's apartments
+				</span>
+			</div>
+
+			<ul className='branch' ref={btns}>
+				<p>Featured news</p>
+				{info.map((info, idx) => {
+					let on = '';
+					Index === idx ? (on = 'on') : (on = '');
+					return (
+						<li key={idx} onClick={() => setIndex(idx)} className={on}>
+							<div className='wrap'>
+								<img src={info.img} alt='' />
+								<div className='txt'>
+									<h2>{info.title}</h2>
+									<p>
+										<strong>ADDRESS</strong>:{info.address}
+									</p>
+									<p>
+										<strong>TEL</strong>:{info.tel}
+									</p>
+									<p>
+										<strong>TIME</strong>: {info.time}
+									</p>
+									<p>
+										<strong>PARKING</strong>:{info.park}
+									</p>
+								</div>
+							</div>
+						</li>
+					);
+				})}
 			</ul>
 
 			<div id='map' ref={container}></div>
@@ -147,7 +178,8 @@ function Location() {
 					<li onClick={() => setIndex(2)}>소전서림</li>
 				</ul> */}
 
-				<ul className='branch' ref={btns}>
+				{/* <ul className='branch' ref={btns}>
+					<p>Featured news</p>
 					{info.map((info, idx) => {
 						let on = '';
 						Index === idx ? (on = 'on') : (on = '');
@@ -174,7 +206,7 @@ function Location() {
 							</li>
 						);
 					})}
-				</ul>
+				</ul> */}
 			</div>
 		</Layout>
 	);
