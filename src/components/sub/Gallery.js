@@ -25,7 +25,7 @@ function Gallery() {
 			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
 		}
 		await axios.get(url).then((json) => {
-			console.log(json.data.photos.photo);
+			if (json.data.photos.photo.length === 0) return alert('No result Found');
 			setItems(json.data.photos.photo);
 		});
 
@@ -36,6 +36,22 @@ function Gallery() {
 				setEnableClick(true);
 			}, 500);
 		}, 1000);
+	};
+
+	const showSearch = () => {
+		const result = input.current.value.trim();
+		input.current.value = '';
+
+		if (!result) return alert('Please enter a search word');
+
+		if (!EnableClick) return;
+		setEnableClick(false);
+		setLoading(true);
+		frame.current.classList.remove('on');
+		getFlickr({
+			type: 'search',
+			tags: result,
+		});
 	};
 
 	useEffect(() => {
@@ -76,23 +92,11 @@ function Gallery() {
 					type='text'
 					ref={input}
 					placeholder='Please enter a search word'
+					onKeyUp={(e) => {
+						if (e.key === 'Enter') showSearch();
+					}}
 				/>
-				<button
-					onClick={() => {
-						const result = input.current.value;
-						input.current.value = '';
-
-						if (!EnableClick) return;
-						setEnableClick(false);
-						setLoading(true);
-						frame.current.classList.remove('on');
-						getFlickr({
-							type: 'search',
-							tags: result,
-						});
-					}}>
-					SEARCH
-				</button>
+				<button onClick={showSearch}>SEARCH</button>
 			</div>
 
 			<Masonry elementType={'div'} options={masonryOptions}>
