@@ -1,30 +1,55 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFacebookF,
+	faTwitter,
+	faYoutube,
+	faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
 	return (
 		<footer>
 			<div className='inner'>
-				<ul>로고</ul>
-				<ul>
-					<li>(주)핸디엄/대표자:장경록</li>
-					<li>사업자:211-88-93413 / 통신판매: 2013-서울강남-02617호</li>
-					<li>주소: 서울시 강남구 영동대로 106길 37</li>
-					<li>고객센터: 1599-2681 / STORE@HANDUM.CO.KR</li>
-				</ul>
-				<ul>
-					<li>
-						<strong>POLICY</strong>
-					</li>
-					<li>이용약관</li>
-					<li>개인정보처리방침</li>
-					<li>사업자정보 확인</li>
-				</ul>
+				<div className='title'>
+					<h3>
+						Join Divi Today.
+						<br />
+						Getting More Done
+						<br />
+						Together.
+					</h3>
+				</div>
 				<ul>
 					<li>
-						<strong>CONTACT</strong>
+						<p>
+							<strong>Address</strong>
+							<br />
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
+							possimus.
+						</p>
 					</li>
-					<li>문의하기</li>
-					<li>인스타그램</li>
+					<li>
+						<p>
+							<strong>Phone Number</strong>
+							<br />
+							1599-2681
+						</p>
+						<p>
+							<strong>E-mail</strong>
+							<br />
+							store@handium.co.kr
+						</p>
+					</li>
+					<li>
+						<p>Follow</p>
+						<div className='icon'>
+							<FontAwesomeIcon icon={faFacebookF} />
+							<FontAwesomeIcon icon={faTwitter} />
+							<FontAwesomeIcon icon={faYoutube} />
+							<FontAwesomeIcon icon={faInstagram} />
+						</div>
+					</li>
 				</ul>
 			</div>
 		</footer>

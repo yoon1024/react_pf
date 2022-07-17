@@ -15,7 +15,7 @@ function Location() {
 			img: `${process.env.PUBLIC_URL}/img/underpressure.jpg`,
 			address: '서울 강남구 영동대로 106길 37',
 			tel: '02-2019-8990',
-			time: 'MON-FRI 08:30~19:00 / SAT-SUN 10:30~18:30 (LAST ORDER 18:30)',
+			time: 'MON-FRI 08:30~19:00 / SAT-SUN 10:30~18:30',
 			park: '주차가능',
 		},
 		{
@@ -39,7 +39,19 @@ function Location() {
 			img: `${process.env.PUBLIC_URL}/img/sojeonseolim.jpg`,
 			address: '서울 강남구 영동대로 138길 23 지하1층',
 			tel: '02-542-0804',
-			time: 'TUE-THU 11:00~21:00 / SUN 11:00~18:00 / MON(정기휴무)',
+			time: 'TUE-THU 11:00~21:00 / SUN 11:00~18:00',
+			park: '주차가능',
+		},
+		{
+			title: 'BONGEUNSA',
+			latlng: new kakao.maps.LatLng(37.5152006, 127.0574369),
+			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
+			imgSize: new kakao.maps.Size(80, 80),
+			imgPos: { offset: new kakao.maps.Point(40, 80) },
+			img: `${process.env.PUBLIC_URL}/img/bongeunsa.jpg`,
+			address: '서울 강남구 봉은사로 531',
+			tel: '0507-1429-4800',
+			time: 'MON-SUN 05:00~22:00',
 			park: '주차가능',
 		},
 	];
@@ -124,17 +136,6 @@ function Location() {
 					{Traffic ? 'TRAFFIC ON' : 'TRAFFIC OFF'}
 				</button>
 
-				{/* <ul className='branch'>
-					<li onClick={() => setIndex(0)}>
-						<div className='wrap'>
-							<img src={info[0].img} alt='' />
-							언더프레셔
-						</div>
-					</li>
-					<li onClick={() => setIndex(1)}>삼성동 코엑스</li>
-					<li onClick={() => setIndex(2)}>소전서림</li>
-				</ul> */}
-
 				<ul className='route' ref={btns}>
 					<p>Featured news</p>
 					{info.map((info, idx) => {
@@ -164,13 +165,6 @@ function Location() {
 						);
 					})}
 				</ul>
-				{/* <ul className="nav">
-					<span>Featured news</span>
-					<li></li>
-					<li></li>
-					<li></li>
-
-				</ul> */}
 			</div>
 		</Layout>
 	);

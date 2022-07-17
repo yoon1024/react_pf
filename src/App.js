@@ -44,7 +44,7 @@ function App() {
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 }

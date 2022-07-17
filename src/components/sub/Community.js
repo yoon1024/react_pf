@@ -3,11 +3,29 @@ import { useRef, useEffect, useState } from 'react';
 
 function Community() {
 	const dummyPosts = [
-		{ title: '1', content: 'a' },
-		{ title: '2', content: 'b' },
-		{ title: '3', content: 'c' },
-		{ title: '4', content: 'd' },
-		{ title: '5', content: 'e' },
+		{
+			title: 'Creativity is a drug I cannot live without.',
+			content:
+				'The true traveler is he who goes on foot, and even then, he sits down a lot of the time.',
+		},
+		{
+			title: 'A man has to have a code, a way of life to live by.',
+			content: 'All would live long, but none would be old.',
+		},
+		{
+			title: 'He not busy being born is busy dying.',
+			content:
+				'They must often change who would be constant in happiness or wisdom.',
+		},
+		{
+			title: 'Sometimes even to live is an act of courage.',
+			content:
+				'The aging process has you firmly in its grasp if you never get the urge to throw a snowball.',
+		},
+		{
+			title: 'True life is lived when tiny changes occur.',
+			content: 'We are none of us infallible--not even the youngest of us.',
+		},
 	];
 
 	const input = useRef(null);
@@ -84,31 +102,60 @@ function Community() {
 			})
 		);
 	};
-
-	//수정모드가 열렸을 때 다른 수정 버튼을 누르더라도 수정이 되지 않도록 해야 하는데
-	//이렇게 하려며 allowed라는 어떤 state를 하나 만들어서
-	//그 값이 true일 때만 이 edit를 눌렀을 때 열리도록
-	//어떤 state값을 추가로 하나 만들어서
-	//내가 만약 edit을 눌러서 현재 수정 모드로 바뀌어 있으면
-	//그 state 값을 false, true 이렇게 지정을 해서 그 값이 true일 때만 edit 이벤트가 발생하도록 만들어 보자
 	useEffect(() => {
 		console.log(Posts);
 	}, [Posts]);
 
+	const path = process.env.PUBLIC_URL;
 	return (
 		<Layout name={'Community'}>
+			<ul className='iconbox'>
+				<li>
+					<img src={`${path}/img/community_icon1.png`} alt='' />
+					<p>MY ACCOUNT</p>
+					<span>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+						provident?
+					</span>
+				</li>
+				<li>
+					<img src={`${path}/img/community_icon2.png`} alt='' />
+					<p>INTERNATIONAL</p>
+					<span>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+						provident?
+					</span>
+				</li>
+				<li>
+					<img src={`${path}/img/community_icon3.png`} alt='' />
+					<p>PRIVACY</p>
+					<span>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+						provident?
+					</span>
+				</li>
+				<li>
+					<img src={`${path}/img/community_icon4.png`} alt='' />
+					<p>CONNECT</p>
+					<span>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda,
+						provident?
+					</span>
+				</li>
+			</ul>
 			<div className='inputBox'>
-				<input type='text' placeholder='제목을 입력하세요' ref={input} />
+				<input type='text' placeholder='Please enter title' ref={input} />
 				<br />
 				<textarea
 					cols='30'
 					rows='5'
-					placeholder='본문을 입력하세요 '
+					placeholder='Please enter description'
 					ref={textarea}></textarea>
 				<br />
-
-				<button onClick={resetForm}>CANCEL</button>
-				<button onClick={createPost}>WRITE</button>
+				<div className='btnSet'>
+					<button onClick={resetForm}>CANCEL</button>
+					<button onClick={createPost}>WRITE</button>
+				</div>
 			</div>
 
 			<div className='showBox'>

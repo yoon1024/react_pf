@@ -28,14 +28,56 @@
 	}
 
 	.close {
-		font-size: 40px;
+		font-size: 35px;
 		line-height: 1;
-		font-family: 'arial';
+		font-family: 'Frank Ruhl Libre';
 		font-weight: bold;
-		color: #2779a4;
+		color: #efefef;
 		position: absolute;
 		top: 30px;
 		right: 5vw;
 		cursor: pointer;
+
+		span {
+			position: relative;
+			&::before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: 0.5s;
+			}
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: 0.5s;
+			}
+		}
+
+		&:hover ::before {
+			top: 50%;
+			transform: rotate(45deg);
+			margin-top: -1px;
+			transition: 0.5s;
+		}
+		&:hover ::after {
+			bottom: 50%;
+			transform: rotate(-45deg);
+			margin-bottom: -1px;
+			transition: 0.5s;
+		}
+		&:hover p {
+			opacity: 0;
+		}
 	}
 }

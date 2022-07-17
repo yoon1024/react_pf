@@ -1,30 +1,175 @@
 .Community {
+	margin-bottom: 150px;
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.iconbox {
+		margin-bottom: 50px;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		li {
+			width: 280px;
+			height: 300px;
+			text-align: center;
+			float: left;
+			margin-right: 20px;
+			&:last-of-type {
+				margin-right: 0px;
+			}
+			img {
+				width: 40%;
+				opacity: 0.8;
+				margin-bottom: 5px;
+			}
+			p {
+				font-size: 20px;
+				font-family: 'Tajawal';
+				font-weight: bold;
+				margin-bottom: 5px;
+				color: #293d69;
+			}
+			span {
+				font-size: 17px;
+				font-family: 'Frank Ruhl Libre';
+				color: #999;
+			}
+		}
+	}
 	.inputBox {
-		// border: 1px solid #000;
 		width: 280px;
 		margin-right: 20px;
 		float: left;
+		border: 1px solid #bbb;
+		padding: 50px;
+		margin-bottom: 50px;
+
+		input[type='text'],
+		textarea {
+			width: 100%;
+			padding: 8px 10px;
+			border: 1px solid #aaa;
+			margin-bottom: 20px;
+		}
+
+		.btnSet {
+			width: 100%;
+			button {
+				width: 49%;
+				float: left;
+				height: 30px;
+				border: none;
+				background: #555;
+				color: #fff;
+				cursor: pointer;
+				margin-right: 2%;
+				&:last-of-type {
+					margin-right: 0px;
+				}
+			}
+		}
 	}
 	.showBox {
-		// border: 1px solid #000;
 		float: left;
 		width: 880px;
 		article {
-			background: #fff;
+			background: rgba(46, 64, 103, 0.2);
 			float: left;
 			width: 280px;
 			height: 280px;
 			margin-bottom: 20px;
 			margin-right: 20px;
-			box-shadow: 2px 2px 3px #999;
+			box-shadow: 1px 1px 2px #999;
+			padding: 30px;
 			&:nth-of-type(3n) {
 				margin-right: 0px;
+			}
+			.txt {
+				width: 200px;
+				margin-bottom: 20px;
+				h2 {
+					font-size: 22px;
+					font-family: 'Tajawal';
+					color: #293d69;
+					margin-bottom: 20px;
+				}
+				p {
+					font-family: 'Karla';
+					color: #000;
+				}
+			}
+			.editTxt {
+				width: 100%;
+				input[type='text'],
+				textarea {
+					width: 100%;
+					padding: 8px 10px;
+					border: 1px solid #293d69;
+					margin-bottom: 20px;
+					background: #efefef;
+					resize: none;
+				}
+			}
+			.btnSet {
+				display: flex;
+				justify-content: right;
+
+				button {
+					background: transparent;
+					margin-right: 20px;
+					cursor: pointer;
+					border: none;
+					transition: 0.5s;
+					&:nth-of-type(1) {
+						color: #293d69;
+					}
+					&:nth-of-type(2) {
+						color: #2779a4;
+					}
+					&:hover {
+						background-color: #999;
+					}
+				}
 			}
 		}
 		&::after {
 			content: '';
 			display: block;
 			clear: both;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Community {
+		.iconbox {
+			li {
+				height: 200px;
+				width: 25%;
+				margin-right: 0px;
+				span {
+					font-size: 15px;
+					// display: none;
+				}
+			}
+		}
+		.inputBox {
+			width: 60%;
+			margin-left: 20%;
+		}
+		.showBox {
+			width: 60%;
+			margin-left: 20%;
+			article {
+				width: 100%;
+				.txt {
+					width: 80%;
+				}
+			}
 		}
 	}
 }
