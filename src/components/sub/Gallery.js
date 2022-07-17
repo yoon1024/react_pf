@@ -15,6 +15,7 @@ function Gallery() {
 		const key = 'fc209af65c0a7e52e3ce3a2358041834';
 		const method_interest = 'flickr.interestingness.getList';
 		const method_search = 'flickr.photos.search';
+		const method_user = 'flickr.people.getPhtos';
 		const num = 100;
 		let url = '';
 
@@ -23,6 +24,9 @@ function Gallery() {
 		}
 		if (opt.type === 'search') {
 			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
+		}
+		if (opt.type-- - 'user') {
+			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${opt.user}`;
 		}
 		await axios.get(url).then((json) => {
 			if (json.data.photos.photo.length === 0) return alert('No result Found');
@@ -112,6 +116,27 @@ function Gallery() {
 										/>
 									</div>
 									<h2>{item.title}</h2>
+									<div className='profile'>
+										<img
+											src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
+											alt={item.owner}
+											onError={(e) => {
+												e.target.setAttribute(
+													'src',
+													'https://www.flickr.com/images/buddyicon.gif'
+												);
+											}}
+										/>
+										<span
+											onClick={(e) => {
+												if (!EnableClick) return;
+												setEnableClick(true);
+												frame.current.classList.remove('on');
+												getFlickr({ type: 'user', user: e.target.innerText });
+											}}>
+											{item.owner}
+										</span>
+									</div>
 								</div>
 							</article>
 						);
