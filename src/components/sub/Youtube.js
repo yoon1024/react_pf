@@ -2,7 +2,7 @@ import Layout from '../common/Layout';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import Popup from '../common/Popup';
 
 function Youtube() {
@@ -82,6 +82,7 @@ function Youtube() {
 									<h3>{tit.length > 20 ? tit.substr(0, 20) + '...' : tit}</h3>
 									<p>{desc.length > 50 ? desc.substr(0, 50) + '...' : desc}</p>
 									<span>{date.split('T')[0]}</span>
+									<FontAwesomeIcon icon={faArrowRightLong} />
 								</div>
 							</article>
 						);
