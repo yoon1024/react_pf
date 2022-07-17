@@ -7,7 +7,7 @@ function Location() {
 	const { kakao } = window;
 	const info = [
 		{
-			title: '언더프레셔 삼성 본점',
+			title: 'UNDERPRSSURE',
 			latlng: new kakao.maps.LatLng(37.51415882109348, 127.06407736804755),
 			imgUrl: `${process.env.PUBLIC_URL}/img/coffee.png`,
 			imgSize: new kakao.maps.Size(80, 80),
@@ -19,7 +19,7 @@ function Location() {
 			park: '주차가능',
 		},
 		{
-			title: '둘러볼 곳 : 삼성동 코엑스',
+			title: 'COEX',
 			latlng: new kakao.maps.LatLng(37.5126964707762, 127.06070547684942),
 			imgUrl: `${process.env.PUBLIC_URL}/img/balloons.png`,
 			imgSize: new kakao.maps.Size(80, 80),
@@ -31,7 +31,7 @@ function Location() {
 			park: '주차가능',
 		},
 		{
-			title: '둘러볼 곳 : 소전서림',
+			title: 'SOJEONSEOLIM',
 			latlng: new kakao.maps.LatLng(37.52364138030701, 127.05620912952872),
 			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
 			imgSize: new kakao.maps.Size(80, 80),
@@ -85,9 +85,6 @@ function Location() {
 		return () => {
 			window.removeEventListener('resize', handleResize);
 		};
-
-		// for (const btn of btns.current.children) btn.classList.remove('on');
-		// btns.current.children[Index].classList.add('on');
 	}, [Index]);
 
 	useEffect(() => {
@@ -99,31 +96,7 @@ function Location() {
 
 	return (
 		<Layout name={'Location'}>
-			{/* <ul className='route'>
-				<li>
-					<FontAwesomeIcon icon={faBus} />
-					<div className='txt'>
-						<h2>BUS</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-					</div>
-				</li>
-				<li>
-					<FontAwesomeIcon icon={faTrainSubway} />
-					<div className='txt'>
-						<h2>SUBWAY</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-					</div>
-				</li>
-				<li>
-					<FontAwesomeIcon icon={faCar} />
-					<div className='txt'>
-						<h2>CAR</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-					</div>
-				</li>
-			</ul> */}
-
-			<div className='txt'>
+			<div className='title'>
 				<h2>Location</h2>
 				<span>
 					Perfect location in a quiet place prvides a sense of clubbing and
@@ -148,7 +121,7 @@ function Location() {
 			<div id='map' ref={container}></div>
 			<div className='btnSet'>
 				<button onClick={() => setTraffic(!Traffic)}>
-					{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
+					{Traffic ? 'TRAFFIC ON' : 'TRAFFIC OFF'}
 				</button>
 
 				{/* <ul className='branch'>
@@ -191,6 +164,13 @@ function Location() {
 						);
 					})}
 				</ul>
+				{/* <ul className="nav">
+					<span>Featured news</span>
+					<li></li>
+					<li></li>
+					<li></li>
+
+				</ul> */}
 			</div>
 		</Layout>
 	);
