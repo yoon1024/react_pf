@@ -66,6 +66,11 @@
 		height: 500px;
 		background-color: #000;
 		margin-top: 20px;
+		filter: saturate(0);
+		transition: 0.5s;
+		&:hover {
+			filter: saturate(1);
+		}
 	}
 	button {
 		margin-bottom: 20px;

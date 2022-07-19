@@ -9,7 +9,7 @@ function Location() {
 		{
 			title: 'UNDERPRSSURE',
 			latlng: new kakao.maps.LatLng(37.51415882109348, 127.06407736804755),
-			imgUrl: `${process.env.PUBLIC_URL}/img/coffee.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker.png`,
 			imgSize: new kakao.maps.Size(80, 80),
 			imgPos: { offset: new kakao.maps.Point(40, 80) },
 			img: `${process.env.PUBLIC_URL}/img/underpressure.jpg`,
@@ -21,7 +21,7 @@ function Location() {
 		{
 			title: 'COEX',
 			latlng: new kakao.maps.LatLng(37.5126964707762, 127.06070547684942),
-			imgUrl: `${process.env.PUBLIC_URL}/img/balloons.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker.png`,
 			imgSize: new kakao.maps.Size(80, 80),
 			imgPos: { offset: new kakao.maps.Point(40, 80) },
 			img: `${process.env.PUBLIC_URL}/img/coex.jpg`,
@@ -33,7 +33,7 @@ function Location() {
 		{
 			title: 'SOJEONSEOLIM',
 			latlng: new kakao.maps.LatLng(37.52364138030701, 127.05620912952872),
-			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker.png`,
 			imgSize: new kakao.maps.Size(80, 80),
 			imgPos: { offset: new kakao.maps.Point(40, 80) },
 			img: `${process.env.PUBLIC_URL}/img/sojeonseolim.jpg`,
@@ -45,7 +45,7 @@ function Location() {
 		{
 			title: 'BONGEUNSA',
 			latlng: new kakao.maps.LatLng(37.5152006, 127.0574369),
-			imgUrl: `${process.env.PUBLIC_URL}/img/books.png`,
+			imgUrl: `${process.env.PUBLIC_URL}/img/marker.png`,
 			imgSize: new kakao.maps.Size(80, 80),
 			imgPos: { offset: new kakao.maps.Point(40, 80) },
 			img: `${process.env.PUBLIC_URL}/img/bongeunsa.jpg`,
