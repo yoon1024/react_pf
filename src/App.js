@@ -12,6 +12,8 @@ import Section_coffee from './components/main/Section_coffee';
 import Section_dessert from './components/main/Section_dessert';
 import Section_shop from './components/main/Section_shop';
 
+import Main from './components/main/Main';
+
 //sub
 import Department from './components/sub/Department';
 import Youtube from './components/sub/Youtube';
@@ -24,7 +26,7 @@ import './scss/style.scss';
 function App() {
 	return (
 		<>
-			<Switch>
+			{/* <Switch>
 				<Route exact path='/'>
 					<Header type={'main'} />
 					<Visual />
@@ -37,7 +39,13 @@ function App() {
 				<Route path='/'>
 					<Header type={'sub'} />
 				</Route>
+			</Switch> */}
+
+			<Switch>
+				<Route exact path='/' component={Main} />
+				<Route path='/' render={() => <Header type={'sub'} />} />
 			</Switch>
+
 			<Route path='/department' component={Department} />
 			<Route path='/youtube' component={Youtube} />
 			<Route path='/location' component={Location} />

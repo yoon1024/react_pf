@@ -1,9 +1,10 @@
 import React from 'react';
+import Anime from '../../asset/anim';
 
 function Visual() {
 	const path = process.env.PUBLIC_URL;
 	return (
-		<figure id='visual'>
+		<figure id='visual' className='myScroll'>
 			<img src={`${path}/img/main_visual.jpg`} alt='커피를 따르는 남자의 손' />
 			<div className='inner'>
 				<div className='title'>

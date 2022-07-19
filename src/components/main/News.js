@@ -14,7 +14,7 @@ function News() {
 	}, []);
 
 	return (
-		<figure id='news'>
+		<figure id='news' className='myScroll'>
 			<div className='inner'>
 				<h2>ABOUT</h2>
 				<p>COFFEE BEANS & ROASTING</p>

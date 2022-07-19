@@ -2,7 +2,7 @@ import React from 'react';
 
 function Section_coffee() {
 	return (
-		<figure id='coffee'>
+		<figure id='coffee' className='myScroll'>
 			<div className='pic'>
 				<div className='img'></div>
 				<h1>
