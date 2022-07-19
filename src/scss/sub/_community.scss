@@ -159,8 +159,8 @@
 				width: 25%;
 				margin-right: 0px;
 				span {
+					padding: 10px;
 					font-size: 15px;
-					// display: none;
 				}
 			}
 		}
@@ -175,6 +175,20 @@
 				width: 100%;
 				.txt {
 					width: 80%;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile) {
+	.Community {
+		.iconbox {
+			li {
+				height: 200px;
+				width: 50%;
+				margin-right: 0px;
+				span {
+					display: none;
 				}
 			}
 		}

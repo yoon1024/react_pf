@@ -43,13 +43,13 @@ function Youtube() {
 						const sub = `${process.env.PUBLIC_URL}/img/youtube_thumbnails`;
 						const num = vid.snippet.position;
 						return (
-							<article key={idx}>
-								<div
-									className='pic'
-									onClick={() => {
-										setOpen(true);
-										setIndex(idx);
-									}}>
+							<article
+								key={idx}
+								onClick={() => {
+									setOpen(true);
+									setIndex(idx);
+								}}>
+								<div className='pic'>
 									<img src={`${sub}${num}.jpg`} alt={vid.snippet.title} />
 									<FontAwesomeIcon icon={faPlay} />
 								</div>

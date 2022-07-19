@@ -125,8 +125,25 @@
 		}
 	}
 }
+
 @media screen and (max-width: $tablet) {
 	.Location {
+		.title {
+			height: 100px;
+			span {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Location {
+		.branch {
+			li {
+				font-size: 15px;
+			}
+		}
 		.title {
 			height: 100px;
 			span {
