@@ -69,6 +69,9 @@ function Gallery() {
 	return (
 		<>
 			<Layout name={'Gallery'}>
+				<div className='title'>
+					<h2>CATALOG</h2>
+				</div>
 				{Loading && (
 					<img
 						className='loading'
