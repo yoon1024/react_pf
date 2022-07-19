@@ -28,11 +28,12 @@ function Gallery() {
 		if (opt.type === 'search') {
 			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
 		}
-		if (opt.type-- - 'user') {
+		if (opt.type === 'user') {
 			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${opt.user}`;
 		}
 		await axios.get(url).then((json) => {
 			if (json.data.photos.photo.length === 0) return alert('No result Found');
+			console.log(json);
 			setItems(json.data.photos.photo);
 		});
 
@@ -74,36 +75,38 @@ function Gallery() {
 						src={`${process.env.PUBLIC_URL}/img/loading.gif`}
 					/>
 				)}
-				<button
-					onClick={() => {
-						if (!EnableClick) return;
-						setEnableClick(false);
-						setLoading(true);
-						frame.current.classList.remove('on');
-						getFlickr({ type: 'interest' });
-					}}>
-					Interest Gallery
-				</button>
-				<button
-					onClick={() => {
-						if (!EnableClick) return;
-						setEnableClick(false);
-						setLoading(true);
-						frame.current.classList.remove('on');
-						getFlickr({ type: 'search', tags: 'coffee' });
-					}}>
-					Search Gallery
-				</button>
-				<button
-					onClick={() => {
-						if (!EnableClick) return;
-						setEnableClick(false);
-						setLoading(true);
-						frame.current.classList.remove('on');
-						getFlickr({ type: 'user', user: '195940766@N07' });
-					}}>
-					My Gallery
-				</button>
+				<div className='btn'>
+					<button
+						onClick={() => {
+							if (!EnableClick) return;
+							setEnableClick(false);
+							setLoading(true);
+							frame.current.classList.remove('on');
+							getFlickr({ type: 'interest' });
+						}}>
+						Interest Gallery
+					</button>
+					<button
+						onClick={() => {
+							if (!EnableClick) return;
+							setEnableClick(false);
+							setLoading(true);
+							frame.current.classList.remove('on');
+							getFlickr({ type: 'search', tags: 'coffee' });
+						}}>
+						Search Gallery
+					</button>
+					<button
+						onClick={() => {
+							if (!EnableClick) return;
+							setEnableClick(false);
+							setLoading(true);
+							frame.current.classList.remove('on');
+							getFlickr({ type: 'user', user: '195940766@N07' });
+						}}>
+						My Gallery
+					</button>
+				</div>
 
 				<div className='searchBox'>
 					<input
@@ -117,8 +120,8 @@ function Gallery() {
 					<button onClick={showSearch}>SEARCH</button>
 				</div>
 
-				<Masonry elementType={'div'} options={masonryOptions}>
-					<div className='frame' ref={frame}>
+				<div className='frame' ref={frame}>
+					<Masonry elementType={'div'} options={masonryOptions}>
 						{Items.map((item, idx) => {
 							return (
 								<article key={idx}>
@@ -161,8 +164,8 @@ function Gallery() {
 								</article>
 							);
 						})}
-					</div>
-				</Masonry>
+					</Masonry>
+				</div>
 			</Layout>
 
 			{Open && (

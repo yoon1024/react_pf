@@ -26,6 +26,24 @@ function Community() {
 			title: 'True life is lived when tiny changes occur.',
 			content: 'We are none of us infallible--not even the youngest of us.',
 		},
+		{
+			title: 'Do not turn back when you are just at the goal.',
+			content: 'Work and acquire, and thou hast chained the wheel of Chance.',
+		},
+		{
+			title: 'Why be a man when you can be a success?',
+			content: 'There is no security on this earth, there is only opportunity.',
+		},
+		{
+			title: 'The secret to creativity is knowing how to hide your sources.',
+			content:
+				'We improve ourselves by victories over ourself. There must be contests, and you must win.',
+		},
+		{
+			title: 'Nothing fails like success.',
+			content:
+				'I started concentrating so hard on my vision that I lost sight.',
+		},
 	];
 
 	const input = useRef(null);
