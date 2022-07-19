@@ -42,18 +42,24 @@
 	}
 	.inputBox {
 		width: 280px;
+		height: 280px;
 		margin-right: 20px;
 		float: left;
-		border: 1px solid #bbb;
+		// border: 1px solid #bbb;
 		padding: 50px;
 		margin-bottom: 50px;
+		background-color: rgba(161, 172, 178, 0.6);
 
 		input[type='text'],
 		textarea {
 			width: 100%;
 			padding: 8px 10px;
-			border: 1px solid #aaa;
+			// border: 1px solid #aaa;
+			border: none;
+			background-color: #efefef;
 			margin-bottom: 20px;
+			resize: none;
+			box-shadow: 1px 1px 2px #999;
 		}
 
 		.btnSet {
@@ -64,6 +70,7 @@
 				height: 30px;
 				border: none;
 				background: #555;
+				box-shadow: 1px 1px 2px #999;
 				color: #fff;
 				cursor: pointer;
 				margin-right: 2%;

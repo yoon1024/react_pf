@@ -43,7 +43,7 @@ function Header(props) {
 					</li>
 					<li>
 						<NavLink to='/members' activeStyle={active}>
-							Members
+							Membership
 						</NavLink>
 					</li>
 				</ul>
