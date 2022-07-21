@@ -1,17 +1,25 @@
 import Layout from '../common/Layout';
-import { useState, useRef } from 'react';
-import { useSelector } from 'react';
+import { useRef, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Masonry from 'react-masonry-component';
 
 function Flickr() {
+	const dispatch = useDispatch();
 	const frame = useRef(null);
-	const [Loading, setLoading] = useState(true);
 	const { flickr } = useSelector((store) => store.flickrReducer);
 	const masonryOptions = { transitionDuration: '0.5s' };
+	useEffect(() => {
+		dispatch({
+			type: 'FLICKR_START',
+			Opt: {
+				type: 'interest',
+			},
+		});
+	}, []);
 
 	return (
 		<Layout name={'Flickr'}>
-			<div className='frame' ref={frame}>
+			<div className='frame on' ref={frame}>
 				<Masonry elementType={'div'} options={masonryOptions}>
 					{flickr.map((pic, idx) => {
 						<article ket={idx}>

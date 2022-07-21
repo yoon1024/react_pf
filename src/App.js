@@ -21,6 +21,7 @@ import Location from './components/sub/Location';
 import Community from './components/sub/Community';
 import Gallery from './components/sub/Gallery';
 import Members from './components/sub/Members';
+import Flickr from './components/sub/Flickr';
 
 import './scss/style.scss';
 
@@ -53,6 +54,7 @@ function App() {
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/members' component={Members} />
+			<Route path='/flickr' component={Flickr} />
 
 			<Footer />
 		</>
