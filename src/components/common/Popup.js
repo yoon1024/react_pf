@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 function Popup(props) {
 	useEffect(() => {

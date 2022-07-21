@@ -111,9 +111,9 @@ function Members() {
 		<Layout name={'Members'}>
 			<form onSubmit={handleSubmit}>
 				<fieldset>
-					<legend className='h'>회원가입 폼 양식</legend>
+					<legend className='h'>Members</legend>
 					<table border='1'>
-						<caption className='h'>회원가입 정보입력</caption>
+						<caption className='h'>INPUT</caption>
 						<tbody>
 							{/* userid */}
 							<tr>
