@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Section_Dessert() {
+function Section_Dessert({ Scrolled }) {
+	console.log(Scrolled);
 	return (
 		<figure id='dessert' className='myScroll'>
 			<div className='pic'>

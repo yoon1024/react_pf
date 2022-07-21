@@ -23,7 +23,7 @@ function Main() {
 	};
 
 	const activation = () => {
-		const base = -200;
+		const base = -150;
 		const scroll = window.scrollY;
 		const btns = main.current.querySelectorAll('.scroll_navi li');
 

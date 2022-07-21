@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react_pf/static/css/main.1ebf5e27.css",
-    "main.js": "/react_pf/static/js/main.aac57d72.js",
+    "main.css": "/react_pf/static/css/main.9d656758.css",
+    "main.js": "/react_pf/static/js/main.fd521490.js",
     "static/media/coffee_visual.jpg": "/react_pf/static/media/coffee_visual.76edd5c22e4e73adb653.jpg",
     "static/media/shop_visual.jpg": "/react_pf/static/media/shop_visual.62b23c285fbc533e6a32.jpg",
     "static/media/dessert_visual.jpg": "/react_pf/static/media/dessert_visual.2d0237eb8ca48514c8e6.jpg",
     "index.html": "/react_pf/index.html",
-    "main.1ebf5e27.css.map": "/react_pf/static/css/main.1ebf5e27.css.map",
-    "main.aac57d72.js.map": "/react_pf/static/js/main.aac57d72.js.map"
+    "main.9d656758.css.map": "/react_pf/static/css/main.9d656758.css.map",
+    "main.fd521490.js.map": "/react_pf/static/js/main.fd521490.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ebf5e27.css",
-    "static/js/main.aac57d72.js"
+    "static/css/main.9d656758.css",
+    "static/js/main.fd521490.js"
   ]
 }

@@ -20,6 +20,7 @@ import Youtube from './components/sub/Youtube';
 import Location from './components/sub/Location';
 import Community from './components/sub/Community';
 import Gallery from './components/sub/Gallery';
+import Members from './components/sub/Members';
 
 import './scss/style.scss';
 
@@ -51,6 +52,7 @@ function App() {
 			<Route path='/location' component={Location} />
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
+			<Route path='/members' component={Members} />
 
 			<Footer />
 		</>
