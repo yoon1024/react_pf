@@ -1,6 +1,5 @@
 import Layout from '../common/Layout';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -12,13 +11,7 @@ import { NavLink } from 'react-router-dom';
 
 function Member() {
 	const path = process.env.PUBLIC_URL;
-	const [Members, setMembers] = useState([]);
-
-	useEffect(() => {
-		axios.get(`${path}/DB/members.json`).then((json) => {
-			setMembers(json.data.members);
-		});
-	}, []);
+	const members = useSelector((store) => store.memberReducer.members);
 
 	return (
 		<Layout name={'Members'}>
@@ -26,7 +19,7 @@ function Member() {
 				<FontAwesomeIcon icon={faPlus} />
 				<p>Partnership</p>
 			</div>
-			{Members.map((member, idx) => {
+			{members.map((member, idx) => {
 				return (
 					<article key={idx}>
 						<div className='pic'>
