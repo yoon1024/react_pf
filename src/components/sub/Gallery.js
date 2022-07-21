@@ -33,7 +33,6 @@ function Gallery() {
 		}
 		await axios.get(url).then((json) => {
 			if (json.data.photos.photo.length === 0) return alert('No result Found');
-			console.log(json);
 			setItems(json.data.photos.photo);
 		});
 
