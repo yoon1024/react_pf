@@ -1,26 +1,17 @@
 import Layout from '../common/Layout';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import Popup from '../common/Popup';
 
+import { useSelector } from 'react-redux';
+
 function Youtube() {
+	const youtube = useSelector((store) => store.youtube.data);
+
 	const [Vids, setVids] = useState([]);
 	const [Open, setOpen] = useState(false);
 	const [Index, setIndex] = useState(0);
-
-	useEffect(() => {
-		const key = 'AIzaSyB07SmnE1cJMVJRKCZmg_kaotLyw9z0IiE';
-		const playlist = 'PL4LRIdOIlx__4Jk4ktxkUK2l6bEDSp5ZU';
-		const num = 6;
-
-		const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=${key}&playlistId=${playlist}&maxResults=${num}`;
-		axios.get(url).then((json) => {
-			console.log(json.data.items);
-			setVids(json.data.items);
-		});
-	}, []);
 
 	return (
 		<>
@@ -36,7 +27,7 @@ function Youtube() {
 					</p>
 				</div>
 				<div className='wrap'>
-					{Vids.map((vid, idx) => {
+					{youtube.map((vid, idx) => {
 						const tit = vid.snippet.title;
 						const desc = vid.snippet.description;
 						const date = vid.snippet.publishedAt;

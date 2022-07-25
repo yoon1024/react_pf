@@ -1,69 +1,79 @@
 import Layout from '../common/Layout';
 import Popup from '../common/Popup';
-import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Masonry from 'react-masonry-component';
+import { fetchFlickr } from '../../redux/flickrSlice';
 
 function Gallery() {
+	const dispatch = useDispatch();
 	const frame = useRef(null);
+	const pop = useRef(null);
 	const input = useRef(null);
-	const [Items, setItems] = useState([]);
+	const flickr = useSelector((store) => store.flickr.data);
+	const [Opt, setOpt] = useState({ type: 'user', user: '195940766@N07' });
+	const [Index, setIndex] = useState(0);
 	const [Loading, setLoading] = useState(true);
 	const [EnableClick, setEnableClick] = useState(true);
-	const [Open, setOpen] = useState(false);
-	const [Index, setIndex] = useState(0);
 	const masonryOptions = { transitionDuration: '0.5s' };
 
-	const getFlickr = async (opt) => {
-		const key = 'fc209af65c0a7e52e3ce3a2358041834';
-		const method_interest = 'flickr.interestingness.getList';
-		const method_search = 'flickr.photos.search';
-		const method_user = 'flickr.people.getPhotos';
-		const num = 100;
-		let url = '';
+	const [Open, setOpen] = useState(false);
+	const [Items, setItems] = useState([]);
 
-		if (opt.type === 'interest') {
-			url = `https://www.flickr.com/services/rest/?method=${method_interest}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1`;
-		}
-		if (opt.type === 'search') {
-			url = `https://www.flickr.com/services/rest/?method=${method_search}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&tags=${opt.tags}`;
-		}
-		if (opt.type === 'user') {
-			url = `https://www.flickr.com/services/rest/?method=${method_user}&per_page=${num}&api_key=${key}&format=json&nojsoncallback=1&user_id=${opt.user}`;
-		}
-		await axios.get(url).then((json) => {
-			if (json.data.photos.photo.length === 0) return alert('No result Found');
-			setItems(json.data.photos.photo);
-		});
+	const startLoading = () => {
+		setLoading(true);
+		frame.current.classList.remove('on');
+	};
 
+	const endLoading = () => {
 		setTimeout(() => {
-			setLoading(false);
 			frame.current.classList.add('on');
-			setTimeout(() => {
-				setEnableClick(true);
-			}, 500);
+			setLoading(false);
+			setTimeout(() => setEnableClick(true), 1000);
 		}, 1000);
 	};
 
-	const showSearch = () => {
-		const result = input.current.value.trim();
-		input.current.value = '';
-
-		if (!result) return alert('Please enter a search word');
-
+	const showInterest = () => {
 		if (!EnableClick) return;
 		setEnableClick(false);
-		setLoading(true);
-		frame.current.classList.remove('on');
-		getFlickr({
+		startLoading();
+		setOpt({ type: 'interest' });
+	};
+
+	const showSearch = () => {
+		if (!EnableClick) return;
+		setEnableClick(false);
+		const result = input.current.value.trim();
+		input.current.value = '';
+		if (!result) return alert('Please enter a search word.');
+		startLoading();
+
+		setOpt({
 			type: 'search',
 			tags: result,
 		});
 	};
 
+	const showUser = (e) => {
+		if (!EnableClick) return;
+		setEnableClick(false);
+
+		let userID = '195940766@N07';
+		e.target.innerText !== 'My Gallery' && (userID = e.target.innerText);
+		startLoading();
+		setOpt({ type: 'user', user: userID });
+	};
+
+	// const openPop = (index) => {
+	// 	pop.current.open();
+	// 	setIndex(index);
+	// };
+
 	useEffect(() => {
-		getFlickr({ type: 'user', user: '195940766@N07' });
-	}, []);
+		dispatch(fetchFlickr(Opt));
+	}, [Opt]);
+
+	useEffect(endLoading, [flickr]);
 
 	return (
 		<>
@@ -78,56 +88,27 @@ function Gallery() {
 					/>
 				)}
 				<div className='btn'>
-					<button
-						onClick={() => {
-							if (!EnableClick) return;
-							setEnableClick(false);
-							setLoading(true);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'interest' });
-						}}>
-						Interest Gallery
-					</button>
-					<button
-						onClick={() => {
-							if (!EnableClick) return;
-							setEnableClick(false);
-							setLoading(true);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'search', tags: 'coffee' });
-						}}>
-						Search Gallery
-					</button>
-					<button
-						onClick={() => {
-							if (!EnableClick) return;
-							setEnableClick(false);
-							setLoading(true);
-							frame.current.classList.remove('on');
-							getFlickr({ type: 'user', user: '195940766@N07' });
-						}}>
-						My Gallery
-					</button>
-				</div>
-
+					<button onClick={showInterest}>Interest Gallery</button>
+					<button onClick={showUser}>My Gallery</button>
+				</div>{' '}
 				<div className='searchBox'>
 					<input
 						type='text'
 						ref={input}
-						placeholder='Please enter a search word'
+						placeholder='Please enter a search word.'
 						onKeyUp={(e) => {
 							if (e.key === 'Enter') showSearch();
 						}}
 					/>
 					<button onClick={showSearch}>SEARCH</button>
 				</div>
-
 				<div className='frame' ref={frame}>
 					<Masonry elementType={'div'} options={masonryOptions}>
-						{Items.map((item, idx) => {
+						{flickr.map((pic, idx) => {
 							return (
 								<article key={idx}>
 									<div className='flickr'>
+										{/* <div className='pic' onClick={() => openPop(idx)}> */}
 										<div
 											className='pic'
 											onClick={() => {
@@ -135,15 +116,15 @@ function Gallery() {
 												setIndex(idx);
 											}}>
 											<img
-												src={`https://live.staticflickr.com/${item.server}/${item.id}_${item.secret}_m.jpg`}
-												alt={item.title}
+												src={`https://live.staticflickr.com/${pic.server}/${pic.id}_${pic.secret}_m.jpg`}
+												alt={pic.title}
 											/>
 										</div>
-										<h2>{item.title}</h2>
+										<h2>{pic.title}</h2>
 										<div className='profile'>
 											<img
-												src={`http://farm${item.farm}.staticflickr.com/${item.server}/buddyicons/${item.owner}.jpg`}
-												alt={item.owner}
+												src={`http://farm${pic.farm}.staticflickr.com/${pic.server}/buddyicons/${pic.owner}.jpg`}
+												alt={pic.owner}
 												onError={(e) => {
 													e.target.setAttribute(
 														'src',
@@ -151,16 +132,7 @@ function Gallery() {
 													);
 												}}
 											/>
-											<span
-												onClick={(e) => {
-													if (!EnableClick) return;
-													setEnableClick(true);
-													setLoading(true);
-													frame.current.classList.remove('on');
-													getFlickr({ type: 'user', user: e.target.innerText });
-												}}>
-												{item.owner}
-											</span>
+											<span onClick={showUser}>{pic.owner}</span>
 										</div>
 									</div>
 								</article>
@@ -170,6 +142,14 @@ function Gallery() {
 				</div>
 			</Layout>
 
+			{/* <Popup ref={pop}>
+				{flickr.length !== 0 && (
+					<img
+						src={`https://live.staticflickr.com/${flickr[Index].server}/${flickr[Index].id}_${flickr[Index].secret}_b.jpg`}
+						alt={flickr[Index].title}
+					/>
+				)}
+			</Popup> */}
 			{Open && (
 				<Popup setOpen={setOpen}>
 					<img

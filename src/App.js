@@ -1,4 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
+import { fetchYoutube } from './redux/youtubeSlice';
+import { fetchFlickr } from './redux/flickrSlice';
+import { fetchMembers } from './redux/memberSlice';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 //common
 import Header from './components/common/Header';
@@ -21,28 +26,19 @@ import Location from './components/sub/Location';
 import Community from './components/sub/Community';
 import Gallery from './components/sub/Gallery';
 import Members from './components/sub/Members';
-import Flickr from './components/sub/Flickr';
 
 import './scss/style.scss';
 
 function App() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchMembers());
+		dispatch(fetchYoutube());
+		dispatch(fetchFlickr({ type: 'interest' }));
+	}, []);
 	return (
 		<>
-			{/* <Switch>
-				<Route exact path='/'>
-					<Header type={'main'} />
-					<Visual />
-					<News />
-					<Section_dessert />
-					<Section_coffee />
-					<Section_shop />
-				</Route>
-
-				<Route path='/'>
-					<Header type={'sub'} />
-				</Route>
-			</Switch> */}
-
 			<Switch>
 				<Route exact path='/' component={Main} />
 				<Route path='/' render={() => <Header type={'sub'} />} />
@@ -54,7 +50,6 @@ function App() {
 			<Route path='/community' component={Community} />
 			<Route path='/gallery' component={Gallery} />
 			<Route path='/members' component={Members} />
-			<Route path='/flickr' component={Flickr} />
 
 			<Footer />
 		</>

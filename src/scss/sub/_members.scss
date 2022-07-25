@@ -1,124 +1,91 @@
 .Members {
-	table {
-		width: 100%;
-		border: none;
-		border-top: 2px solid #333;
-		border-bottom: 1px solid #333;
-
-		th {
-			width: 20%;
-			border: none;
-			border-bottom: 1px solid #bbb;
-			padding: 15px 30px;
-			text-align: left;
-
-			&:last-child {
-				text-align: center;
-			}
-
-			input[type='reset'],
-			input[type='submit'] {
-				border: 1px solid #aaa;
-				width: 150px;
-				height: 30px;
-				display: inline-flex;
-				justify-content: center;
-				align-items: center;
-				margin: 0px 10px;
-				cursor: pointer;
-			}
-		}
-		td {
-			border: none;
-			border-bottom: 1px solid #bbb;
-			border-left: 1px solid #bbb;
-			padding: 15px 30px;
-
-			input[type='text'],
-			input[type='password'],
-			select,
-			textarea {
-				width: 40%;
-				border: 1px solid #aaa;
-				padding: 6px 10px;
-				resize: none;
-			}
-
-			label {
-				margin-right: 6px;
-			}
-			input[type='radio'],
-			input[type='checkbox'] {
-				margin-right: 20px;
-			}
-
-			.err {
-				font: 12px/1 'arial';
-				color: hotpink;
-				margin-left: 10px;
-			}
+	padding-bottom: 150px;
+	width: 100%;
+	overflow: hidden;
+	h2 {
+		width: 600px;
+		margin: 0 auto;
+		text-align: center;
+		font-family: 'Frank Ruhl Libre';
+		font-size: 40px;
+		letter-spacing: 1.5px;
+		margin-bottom: 50px;
+	}
+	.pic {
+		width: 40%;
+		height: 700px;
+		float: left;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
-}
+	.text {
+		width: 59%;
+		height: 700px;
+		float: right;
+		table {
+			width: 100%;
+			margin-top: 30px;
+			border: none;
+			th {
+				width: 20%;
+				border: none;
+				padding: 15px 30px;
+				text-align: left;
+				font-family: 'roboto';
+				color: #555;
 
-@media screen and (max-width: $tablet) {
-	.Members {
-		> .inner {
-			table {
-				td {
-					input[type='text'],
-					input[type='password'],
-					select,
-					textarea {
-						width: 80%;
-					}
+				&:last-child {
+					text-align: center;
+				}
 
-					.err {
-						display: block;
-						margin-top: 10px;
+				input[type='reset'],
+				input[type='submit'] {
+					border: none;
+					width: 150px;
+					height: 30px;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0px 10px;
+					cursor: pointer;
+					background-color: #aaa;
+					transition: 0.5s;
+					&:hover {
+						background-color: #293d69;
+						color: #fff;
 					}
 				}
 			}
-		}
-	}
-}
+			td {
+				border: none;
+				border-left: 1px solid #bbb;
+				padding: 15px 30px;
 
-@media screen and (max-width: $mobile) {
-	.Members {
-		> .inner {
-			table {
-				th {
-					display: none;
-					padding: 15px 0px;
-
-					&:last-child {
-						display: block;
-						width: 100%;
-						display: flex;
-						justify-content: space-between;
-					}
-
-					input[type='reset'],
-					input[type='submit'] {
-						width: 48%;
-						margin: 0px;
-					}
+				input[type='text'],
+				input[type='password'],
+				select,
+				textarea {
+					width: 70%;
+					border: 1px solid #aaa;
+					padding: 6px 10px;
+					resize: none;
 				}
-				td {
-					border-left: none;
-					padding: 15px 0px;
 
-					input[type='text'],
-					input[type='password'],
-					select,
-					textarea {
-						width: 100%;
-					}
+				label {
+					margin-right: 5px;
+				}
+				input[type='radio'],
+				input[type='checkbox'] {
+					margin-right: 20px;
+				}
 
-					.err {
-						display: block;
-						margin-top: 10px;
-					}
+				.err {
+					font: 12px/1 'arial';
+					color: hotpink;
+					margin-left: 10px;
 				}
 			}
 		}

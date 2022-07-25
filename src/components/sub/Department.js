@@ -1,5 +1,9 @@
 import Layout from '../common/Layout';
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
+
 import { useSelector } from 'react-redux';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -11,10 +15,10 @@ import { NavLink } from 'react-router-dom';
 
 function Member() {
 	const path = process.env.PUBLIC_URL;
-	const members = useSelector((store) => store.memberReducer.members);
+	const members = useSelector((store) => store.members.data);
 
 	return (
-		<Layout name={'Members'}>
+		<Layout name={'Department'}>
 			<div className='box2'>
 				<FontAwesomeIcon icon={faPlus} />
 				<p>Partnership</p>
